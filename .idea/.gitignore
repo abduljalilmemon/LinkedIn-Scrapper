@@ -1,0 +1,9 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+venv
+misc.xml
+vcs.xml
+modules.xml
+inspectionProfiles
+LinkedIn-Scrapper.iml
