@@ -1,6 +1,7 @@
 import requests
 import logging
 import re
+import config
 
 
 class LinkedIn:
@@ -39,16 +40,21 @@ class LinkedIn:
             'loginFlow': 'REMEMBER_ME_OPTIN'
         }
         try:
-            after_login = self.s.post("https://www.linkedin.com/checkpoint/lg/login-submit", headers=self.headers,
-                                      data=data).text
-        except:
+            after_login = self.session.post("https://www.linkedin.com/checkpoint/lg/login-submit", headers=self.headers,
+                                            data=data).text
+        except Exception as e:
+            logging.exception(e)
             return False
+        print(after_login)
         is_logged_in = after_login.split('<title>')[1].split('</title>')[0]
-        if is_logged_in == "LinkedIn":
-            return True
-        else:
-            return False
+        return True if is_logged_in == "LinkedIn" else False
+
+    def get_profile(self):
+        
+        pass
 
 
 if __name__ == '__main__':
     linkedin = LinkedIn()
+    r = linkedin.login(email=config.EMAIL, password=config.PASSWORD)
+    print(r)
