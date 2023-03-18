@@ -1,6 +1,5 @@
 import scrapy
 
-
 class LinkedInPeopleProfileSpider(scrapy.Spider):
     name = "linkedin_people_profile"
 
