@@ -8,8 +8,9 @@ if WORKER_ENV == 'local':
     env.read_env()
 
 DEBUG = env.bool('DEBUG', False)
-EMAIL = env.bool('EMAIL')
-PASSWORD = env.bool('PASSWORD')
+EMAIL = env.str('EMAIL')
+PASSWORD = env.str('PASSWORD')
+SCRAPE_API_KEY = env.str('SCRAPE_API_KEY')
 
 
 def get_log_level():

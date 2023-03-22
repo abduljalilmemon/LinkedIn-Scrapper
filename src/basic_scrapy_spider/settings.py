@@ -1,4 +1,5 @@
- # Scrapy settings for quotes_js_scraper project
+import config
+# Scrapy settings for quotes_js_scraper project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -12,7 +13,7 @@ BOT_NAME = 'basic_scrapy_spider'
 SPIDER_MODULES = ['basic_scrapy_spider.spiders']
 NEWSPIDER_MODULE = 'basic_scrapy_spider.spiders'
 
-SCRAPEOPS_API_KEY = 'xyz'
+SCRAPEOPS_API_KEY = config.SCRAPE_API_KEY
 SCRAPEOPS_PROXY_ENABLED = True
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
