@@ -8,10 +8,10 @@ import config
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'basic_scrapy_spider'
+BOT_NAME = 'linkedin_scrapy_spider'
 
-SPIDER_MODULES = ['basic_scrapy_spider.spiders']
-NEWSPIDER_MODULE = 'basic_scrapy_spider.spiders'
+SPIDER_MODULES = ['linkedin_scrapy_spider.spiders']
+NEWSPIDER_MODULE = 'linkedin_scrapy_spider.spiders'
 
 SCRAPEOPS_API_KEY = config.SCRAPE_API_KEY
 SCRAPEOPS_PROXY_ENABLED = True

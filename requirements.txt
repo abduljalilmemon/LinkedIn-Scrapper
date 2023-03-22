@@ -4,3 +4,4 @@ jmespath==1.0.1
 pydantic==1.10.5
 loguru==0.6.0
 Scrapy==2.8.0
+scrapeops-scrapy-proxy-sdk==1.0.0
