@@ -1,5 +1,6 @@
 import scrapy
 
+
 class LinkedInPeopleProfileSpider(scrapy.Spider):
     name = "linkedin_people_profile"
 
@@ -7,8 +8,15 @@ class LinkedInPeopleProfileSpider(scrapy.Spider):
         'FEEDS': {'data/%(name)s_%(time)s.jsonl': {'format': 'jsonlines', }}
     }
 
+    def get_profile(self, username: str):
+        linkedin_people_url = f'https://www.linkedin.com/in/{username}/'
+        return scrapy.Request(url=linkedin_people_url,
+                              callback=self.parse_profile,
+                              meta={'profile': username,
+                                    'linkedin_url': linkedin_people_url})
+
     def start_requests(self):
-        profile_list = ['reidhoffman']
+        profile_list = ['abdul-jalil-memon']
         for profile in profile_list:
             linkedin_people_url = f'https://www.linkedin.com/in/{profile}/'
             yield scrapy.Request(url=linkedin_people_url,
